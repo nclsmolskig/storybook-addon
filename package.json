@@ -1,5 +1,5 @@
 {
-  "name": "storybook-test-test-module",
+  "name": "dependencies-addon-test",
   "version": "0.0.0",
   "description": "test for storybook addon",
   "keywords": [
@@ -17,11 +17,6 @@
       "types": "./dist/index.d.ts",
       "require": "./dist/index.cjs",
       "import": "./dist/index.js"
-    },
-    "./preview": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/preview.js",
-      "require": "./dist/preview.js"
     },
     "./preset": "./dist/preset.cjs",
     "./manager": "./dist/manager.js",
@@ -91,15 +86,12 @@
     "managerEntries": [
       "src/manager.ts"
     ],
-    "previewEntries": [
-      "src/preview.ts"
-    ],
     "nodeEntries": [
       "src/preset.ts"
     ]
   },
   "storybook": {
-    "displayName": "storybookTest",
+    "displayName": "dependencies-addon-test",
     "supportedFrameworks": [
       "react", "vue", "angular", "web-components", "ember", "html", "svelte", "preact", "react-native"
     ],
