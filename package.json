@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "test for storybook addon",
   "keywords": [
-    "storybook-addons", "storybook-addons"
+    "storybook-addons",
+    "storybook-addons"
   ],
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "@storybook/addon-essentials": "8.0.0-beta.2",
     "@storybook/addon-interactions": "8.0.0-beta.2",
     "@storybook/addon-links": "8.0.0-beta.2",
+    "@storybook/api": "^7.6.17",
     "@storybook/blocks": "8.0.0-beta.2",
     "@storybook/components": "8.0.0-beta.2",
     "@storybook/core-events": "8.0.0-beta.2",
@@ -93,8 +95,21 @@
   "storybook": {
     "displayName": "dependencies-addon-test",
     "supportedFrameworks": [
-      "react", "vue", "angular", "web-components", "ember", "html", "svelte", "preact", "react-native"
+      "react",
+      "vue",
+      "angular",
+      "web-components",
+      "ember",
+      "html",
+      "svelte",
+      "preact",
+      "react-native"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  },
+  "dependencies": {
+    "@storybook/addons": "^7.6.17",
+    "react-flow-renderer": "^10.3.17",
+    "skott": "^0.33.2"
   }
 }
