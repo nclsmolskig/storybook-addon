@@ -1,5 +1,5 @@
 {
-  "name": "dependencies-addon-test",
+  "name": "nclh-dependency-graph",
   "version": "0.0.0",
   "description": "test for storybook addon",
   "keywords": [
@@ -11,7 +11,7 @@
   },
   "type": "module",
   "license": "MIT",
-  "author": "gabriel",
+  "author": "nclh",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

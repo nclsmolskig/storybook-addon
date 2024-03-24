@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react";
+import data from "../dependencies.json"
 
 const preview: Preview = {
   parameters: {
@@ -12,6 +13,9 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    dependencyGraph:{
+      data
+    }
   },
 };
 
