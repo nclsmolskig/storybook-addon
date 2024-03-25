@@ -4,7 +4,7 @@ import data from "../dependencies.json"
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: "light",
+      default: "dark",
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -14,7 +14,10 @@ const preview: Preview = {
       },
     },
     dependencyGraph:{
-      data
+      data,
+      config: {
+        include: 'storybook'
+      }
     }
   },
 };

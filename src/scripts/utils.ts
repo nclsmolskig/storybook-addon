@@ -5,6 +5,12 @@ import { DependencyGraph, DepGraphParams, NpmPackage } from "./types";
 function sanitizePackageName(packageName: string): string {
   return packageName.replace('@', '') //TODO @ should not be hardcoded. Check if mermaid already has a sanitizing function for strings
 }
+function getGraphReturnObject(value:string, error: boolean = false){
+  return {
+    value,
+    error
+  }
+}
 
 function normalizeNpmGraph(packageData: NpmPackage, include: string) {
   function getDependencies(packageData: NpmPackage, graph: DependencyGraph, include: string): string[] {
@@ -65,19 +71,20 @@ function renderMermaidDiagram(dependencyMap: DependencyGraph){
 function getGraphRenderByUIType(normalizedGraph: DependencyGraph, params: DepGraphParams){
   switch (params.uiType){
     case uiTypes.mermaid: {
-      return renderMermaidDiagram(normalizedGraph)
+      return getGraphReturnObject(renderMermaidDiagram(normalizedGraph))
     }
     default: {
-      return MESSAGES.NO_UI_AVAILABLE
+      return getGraphReturnObject(MESSAGES.NO_UI_AVAILABLE, true)
     }
   }
 }
 
 function getGraphRender(params: DepGraphParams, storyData: API_DocsEntry | API_StoryEntry) {
   if(!params.data || !Object.keys(params.data).length ) {
-    return MESSAGES.NO_DATA
+    return getGraphReturnObject(MESSAGES.NO_DATA, true)
   }
   const normalizedGraph = normalizeGraph(params);
+  //TODO Either here or inside the graph normalization flow, we need to filter only the data related to the current story
   return getGraphRenderByUIType(normalizedGraph, params) //TODO consider function returning a ReactComponent with render instead of string
 }
 
