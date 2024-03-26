@@ -1,5 +1,14 @@
-# Storybook Addon storybookTest
-test for storybook addon
+# NCLH Dependency Graph - Storybook Addon
+
+## TODO:
+- [ ] Update this readme
+- [ ] Isolate Graph rendering component from Panel component. Keep in mind that the rendered data may vary depending on the UI picked by the user, and the component may be displayed in a Tab (instead of the current Panel)
+- [ ] Explore module options for adding Navigation to an HTML element or SVG (Zoom, Pan, Drag, etc.)
+- [ ] Improve current npm scripts. I was having issues with `"start": "run-p build:watch 'storybook --quiet'"`, as it seems that sometimes storybook runs before the build, failing to find `dist/manager.js`
+- [ ] Rendering process should be refreshed upon story switching, as storyData and useParams change as well
+- [ ] Add support for filtering data on the fly (include already working for npmPkg, needs to support string[])
+- [ ] Review existing building scripts and dependencies looking for improvement
+- [ ] Update packageJson to match new Addon
 
 ### Development scripts
 

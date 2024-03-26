@@ -1,10 +1,9 @@
 {
-  "name": "dependencies-addon-test",
+  "name": "nclh-dependency-graph",
   "version": "0.0.0",
   "description": "test for storybook addon",
   "keywords": [
-    "storybook-addons",
-    "storybook-addons"
+    "storybook-addons", "dependency-graph"
   ],
   "repository": {
     "type": "git",
@@ -15,7 +14,7 @@
     "depgraph": "index.js"
   },
   "license": "MIT",
-  "author": "gabriel",
+  "author": "nclh",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -44,6 +43,9 @@
     "eject-ts": "zx scripts/eject-typescript.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "mermaid": "^10.9.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "8.0.0-beta.2",
