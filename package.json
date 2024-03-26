@@ -10,6 +10,10 @@
     "type": "git",
     "url": "https://github.com/nclsmolskig/storybook-addon"
   },
+  "main": "index.js",
+  "bin": {
+    "depgraph": "index.js"
+  },
   "license": "MIT",
   "author": "gabriel",
   "exports": {
