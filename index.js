@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 const packageJSON = require('./package.json');
-const path = require('path');
 
 const options = require('yargs-parser')(process.argv.slice(2),{
   boolean: ['help'],
@@ -46,6 +45,7 @@ function run(options){
     }
     case 'import':{
       //TODO here we can add getting dependencies from skott's
+      console.log('Here we would gather data from Skott');
       break;
     }
     default:{
