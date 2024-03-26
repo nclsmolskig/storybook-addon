@@ -1,9 +1,10 @@
 import type { Preview } from "@storybook/react";
+import data from "../dependencies.json"
 
 const preview: Preview = {
   parameters: {
     backgrounds: {
-      default: "light",
+      default: "dark",
     },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
@@ -12,6 +13,12 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    dependencyGraph:{
+      data,
+      config: {
+        include: 'storybook'
+      }
+    }
   },
 };
 

@@ -17,16 +17,6 @@ type BundlerConfig = {
 };
 
 export default defineConfig(async (options) => {
-  // reading the three types of entries from package.json, which has the following structure:
-  // {
-  //  ...
-  //   "bundler": {
-  //     "exportEntries": ["./src/index.ts"],
-  //     "managerEntries": ["./src/manager.ts"],
-  //     "previewEntries": ["./src/preview.ts"]
-  //     "nodeEntries": ["./src/preset.ts"]
-  //   }
-  // }
   const packageJson = await readFile('./package.json', 'utf8').then(JSON.parse) as BundlerConfig;
   const {
     bundler: {
