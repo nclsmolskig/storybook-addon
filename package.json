@@ -9,7 +9,10 @@
     "type": "git",
     "url": "https://github.com/nclsmolskig/storybook-addon"
   },
-  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "depgraph": "index.js"
+  },
   "license": "MIT",
   "author": "nclh",
   "exports": {
@@ -34,7 +37,7 @@
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "run-p build:watch 'storybook --quiet'",
+    "start": "node index.js run && run-p build:watch 'storybook --quiet'",
     "prerelease": "zx scripts/prepublish-checks.js",
     "release": "npm run build && auto shipit",
     "eject-ts": "zx scripts/eject-typescript.js",
@@ -96,8 +99,19 @@
   "storybook": {
     "displayName": "dependencies-addon-test",
     "supportedFrameworks": [
-      "react", "vue", "angular", "web-components", "ember", "html", "svelte", "preact", "react-native"
+      "react",
+      "vue",
+      "angular",
+      "web-components",
+      "ember",
+      "html",
+      "svelte",
+      "preact",
+      "react-native"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+  },
+  "dependencies": {
+    "yargs-parser": "^21.1.1"
   }
 }
