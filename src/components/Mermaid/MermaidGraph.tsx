@@ -16,13 +16,23 @@ const MermaidGraph = ({ currentStoryData, dependencyData }: any) => {
   );
 
   return (
-    <div style={{ background: "white", color: "black", padding: "16px" }}>
+    <div
+      style={{
+        background: "white",
+        color: "black",
+        padding: "16px",
+        height: "100%",
+        width: "100%",
+      }}
+    >
       {render.error ? (
         <p> {render.value} </p>
       ) : (
-        <TransformWrapper wheel={{ smoothStep: 0.03 }}>
-          <SvgHandler render={render}></SvgHandler>
-        </TransformWrapper>
+        <>
+          <TransformWrapper wheel={{ smoothStep: 0.03 }}>
+            <SvgHandler render={render} storyId={currentStoryData.id}></SvgHandler>
+          </TransformWrapper>
+        </>
       )}
     </div>
   );

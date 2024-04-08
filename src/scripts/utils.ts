@@ -77,14 +77,17 @@ function renderMermaidDiagram(dependencyMap: DependencyGraph) {
       graph.push(
         `${sanitizePackageName(packageName)}${edges}${sanitizePackageName(dependencyName)}`,
       );
-      graph.push(
-        `click ${sanitizePackageName(packageName)} clickCallback "${sanitizePackageName(packageName)}"`,
-      ); //FIXME: this is binding multiple events to the same node (we have to call it once)
+
+      // TODO: This bindings should be done in a different way, maybe outside the mermaid structure since it binds multiple times
       graph.push(
         `click ${sanitizePackageName(dependencyName)} clickCallback "test"`,
       );
-      graph.push(`classDef default dep-node`);
+      graph.push(`class ${sanitizePackageName(dependencyName)} dep-node`);
     }
+    graph.push(
+      `click ${sanitizePackageName(packageName)} clickCallback "${sanitizePackageName(packageName)}"`,
+    );
+    graph.push(`class ${sanitizePackageName(packageName)} dep-node`);
   }
 
   return graph.join(lineBreak);
