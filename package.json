@@ -3,16 +3,14 @@
   "version": "0.0.0",
   "description": "test for storybook addon",
   "keywords": [
-    "storybook-addons", "dependency-graph"
+    "storybook-addons",
+    "dependency-graph"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/nclsmolskig/storybook-addon"
   },
-  "main": "index.js",
-  "bin": {
-    "depgraph": "index.js"
-  },
+  "type": "module",
   "license": "MIT",
   "author": "nclh",
   "exports": {
@@ -37,12 +35,17 @@
     "build": "tsup",
     "build:watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js run && run-p build:watch 'storybook --quiet'",
+    "start": "run-p build:watch 'storybook --quiet'",
     "prerelease": "zx scripts/prepublish-checks.js",
     "release": "npm run build && auto shipit",
     "eject-ts": "zx scripts/eject-typescript.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "mermaid": "^10.9.0",
+    "react-zoom-pan-pinch": "^3.4.4",
+    "yargs-parser": "^21.1.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "8.0.0-beta.2",
@@ -107,9 +110,5 @@
       "react-native"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
-  },
-  "dependencies": {
-    "mermaid": "^10.9.0",
-    "yargs-parser": "^21.1.1"
   }
 }
