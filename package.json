@@ -44,9 +44,6 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
-    "mermaid": "^10.9.0"
-  },
   "devDependencies": {
     "@storybook/addon-essentials": "8.0.0-beta.2",
     "@storybook/addon-interactions": "8.0.0-beta.2",
@@ -112,6 +109,7 @@
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
   },
   "dependencies": {
+    "mermaid": "^10.9.0",
     "yargs-parser": "^21.1.1"
   }
 }
